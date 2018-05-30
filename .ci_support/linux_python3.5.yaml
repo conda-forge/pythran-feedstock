@@ -1,0 +1,12 @@
+cxx_compiler:
+- toolchain_cxx
+gmp:
+- '6'
+pin_run_as_build:
+  gmp:
+    max_pin: x
+  python:
+    max_pin: x.x
+    min_pin: x.x
+python:
+- '3.5'
