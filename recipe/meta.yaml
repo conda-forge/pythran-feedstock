@@ -1,6 +1,6 @@
 {% set name = "pythran" %}
-{% set version = "0.8.5" %}
-{% set sha256 = "92f67171d03ba3dbed9da639c35aad2fe0982c183f0c4459dcfddd621f69795e" %}
+{% set version = "0.8.6" %}
+{% set sha256 = "439976efdc4d4b4599eaee7b9bec17a09ba637d41748fda56f7a8808505f365e" %}
 {% set variant = "openblas" %}
 
 package:
