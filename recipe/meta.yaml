@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1000
   script: python -m pip install --no-deps --ignore-installed .
   skip: true  # [win]
   features:
@@ -25,7 +25,7 @@ requirements:
     - python
     - pip
     - gmp
-    - numpy 1.13.*
+    - numpy >=1.13
     - pytest-runner
   run:
     - python
