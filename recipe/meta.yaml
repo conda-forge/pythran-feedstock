@@ -25,7 +25,7 @@ requirements:
     - python
     - pip
     - gmp
-    - numpy 1.13.*
+    - numpy >=1.13
     - pytest-runner
   run:
     - python
