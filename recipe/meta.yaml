@@ -1,6 +1,6 @@
 {% set name = "pythran" %}
-{% set version = "0.9.0" %}
-{% set sha256 = "5feab62e37c4af38e54531182abc563e412639efe887d80b8a588bd013f19707" %}
+{% set version = "0.9.1" %}
+{% set sha256 = "01508e4a2b978311bc43a39a435fbbd80b5c3f8f96cc86a9b1aa3fafceac8c40" %}
 {% set variant = "openblas" %}
 
 package:
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
   skip: true  # [win]
   features:
