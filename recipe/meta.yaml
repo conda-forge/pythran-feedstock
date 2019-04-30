@@ -15,8 +15,7 @@ source:
 build:
   number: 1
   script: python -m pip install --no-deps --ignore-installed .
-  features:
-    - blas_{{ variant }}
+  skip: true  # [win and py27]
 
 requirements:
   build:
@@ -24,12 +23,10 @@ requirements:
   host:
     - python
     - pip
-    - gmp  # [not win]
     - numpy >=1.13
     - pytest-runner
   run:
     - python
-    - gmp  # [not win]
     - ply
     - networkx
     - {{ pin_compatible('numpy') }}
