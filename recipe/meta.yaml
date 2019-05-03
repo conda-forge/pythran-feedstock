@@ -1,21 +1,20 @@
-{% set name = "pythran" %}
-{% set version = "0.9.1post0" %}
-{% set sha256 = "2c3d3be03d2b4338f7a82a52217f7ddf9f37bfacf17aeb66e5fc883a29e06535" %}
-{% set variant = "openblas" %}
+{% set version = "0.9.1.post0" %}
 
 package:
-  name: {{ name|lower }}
+  name: pythran
   version: {{ version }}
 
 source:
-    #url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://files.pythonhosted.org/packages/a7/0c/fbfd44f3f5b3712d46e9f2afccb00c0fd963000b291ba7645214107b18e1/pythran-0.9.1.post0.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
+  sha256: 2c3d3be03d2b4338f7a82a52217f7ddf9f37bfacf17aeb66e5fc883a29e06535
 
 build:
   number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: true  # [win and py27]
+  entry_points:
+    - pythran = pythran.run:run
+    - pythran-config = pythran.config:run
 
 requirements:
   build:
@@ -27,11 +26,12 @@ requirements:
     - pytest-runner
   run:
     - python
-    - ply
-    - networkx
     - {{ pin_compatible('numpy') }}
-    - six
+    - decorator
     - gast
+    - networkx >=2
+    - ply >=3.4
+    - six
 
 test:
   files:
@@ -41,6 +41,14 @@ test:
   commands:
     - pythran dprod.py
     - python -c 'import dprod'
+test:
+  imports:
+    - omp
+    - pythran
+    - pythran.analyses
+    - pythran.optimizations
+    - pythran.transformations
+    - pythran.types
 
 about:
   home: http://github.com/serge-sans-paille/pythran
