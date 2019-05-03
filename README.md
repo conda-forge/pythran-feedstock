@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About pythran
 =============
 
@@ -22,9 +18,91 @@ with the same interface, but (hopefully) faster.
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/pythran-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/pythran-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/pythran-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/pythran-feedstock)
-![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
+
+<table><tr>
+    <td>Appveyor</td>
+    <td>
+      <a href="https://ci.appveyor.com/project/conda-forge/pythran-feedstock/branch/master">
+        <img alt="windows" src="https://img.shields.io/appveyor/ci/conda-forge/pythran-feedstock/master.svg?label=Windows">
+      </a>
+    </td>
+  </tr>
+    
+  <tr>
+    <td>Azure</td>
+    <td>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_python2.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python2.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_python3.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python3.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_python3.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_python2.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python2.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_python3.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python3.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_python3.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python3.7" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_cxx_compilervs2015python3.6</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.6" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_cxx_compilervs2015python3.7</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.7" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+    </td>
+  </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
+</table>
 
 Current release info
 ====================
