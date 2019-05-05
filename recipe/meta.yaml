@@ -1,4 +1,4 @@
-{% set version = "0.9.1.post0" %}
+{% set version = "0.9.2" %}
 
 package:
   name: pythran
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
-  sha256: 2c3d3be03d2b4338f7a82a52217f7ddf9f37bfacf17aeb66e5fc883a29e06535
+  sha256: eab7c91f904f31b786a58b73dd0da31a0ddd4a207c447ca60a87b76101bffd0d
 
 build:
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   skip: true  # [win and py27]
   entry_points:
@@ -32,6 +32,7 @@ requirements:
     - networkx >=2
     - ply >=3.4
     - six
+    - beniget
 
 test:
   files:
