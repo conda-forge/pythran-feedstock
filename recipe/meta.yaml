@@ -45,10 +45,10 @@ test:
   requires:
     - {{ compiler('cxx') }}
   commands:
-    - pythran dprod.py
-    - python -c 'import dprod'
-    - pythran simple_numexpr.py -DUSE_XSIMD -march=native
-    - python -c 'import simple_numexpr'
+    - pythran dprod.py  # [not win]
+    - python -c 'import dprod'  # [not win]
+    - pythran simple_numexpr.py -DUSE_XSIMD -march=native  # [not win]
+    - python -c 'import simple_numexpr'  # [not win]
   imports:
     - omp
     - pythran
