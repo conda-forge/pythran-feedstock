@@ -41,6 +41,7 @@ requirements:
 test:
   files:
     - dprod.py
+    - simple_numexpr.py
   requires:
     - {{ compiler('cxx') }}
   commands:
@@ -48,7 +49,6 @@ test:
     - python -c 'import dprod'
     - pythran simple_numexpr.py -DUSE_XSIMD -march=native
     - python -c 'import simple_numexpr'
-test:
   imports:
     - omp
     - pythran
