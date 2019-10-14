@@ -9,25 +9,28 @@ source:
   sha256: d5d913c86cdc3a0c6387e796ec1f65c1563ca34f10201c43ae5acc757c70fd8d
 
 build:
-  number: 0
+  number: 1
   script:
-    - "{{ PYTHON }} -c 'import os, shutil; shutil.rmtree(os.path.join(\"pythran\", \"xsimd\"))'"
-    - "{{ PYTHON }} -c 'with open(\"setup.cfg\", \"w\") as s: s.write(\"[build_py]\\nno_xsimd=True\")'"
-    - "{{ PYTHON }} -m pip install . --no-deps -vv"
-  skip: true  # [win and py27]
+    - "python -c \"import os, shutil; shutil.rmtree(os.path.join('pythran', 'xsimd'))\""
+    - "python -c \"with open('setup.cfg', 'w') as s: s.write('[build_py]\\nno_xsimd=True')\""  # [not win]
+    - "python -c \"s = open('pythran\\pythran-win32.cfg', 'r'); c = s.read(); s.close(); s = open('pythran\\pythran-win32.cfg', 'w'); r = c.replace('CC=', 'CC=clang-cl.exe').replace('CXX=','CXX=clang-cl.exe'); s.write(r); s.close(); print(r)\""  # [win]
+    - "python -m pip install . --no-deps -vv"
   entry_points:
     - pythran = pythran.run:run
     - pythran-config = pythran.config:run
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
+    - {{ compiler('cxx') }}  # [not win]
+    - clang  # [win]
   host:
     - python
     - pip
     - numpy >=1.13
     - pytest-runner
   run:
+    - {{ compiler('cxx') }}  # [not win]
+    - clang  # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
@@ -36,19 +39,17 @@ requirements:
     - ply >=3.4
     - six
     - beniget >=0.2.0
-    - xsimd =7.2.2
+    - xsimd =7.2.2  # [not win]
 
 test:
   files:
     - dprod.py
     - simple_numexpr.py
-  requires:
-    - {{ compiler('cxx') }}
   commands:
-    - pythran dprod.py  # [not win]
-    - python -c 'import dprod'  # [not win]
-    - pythran simple_numexpr.py -DUSE_XSIMD -march=native  # [not win]
-    - python -c 'import simple_numexpr'  # [not win]
+    - pythran -v dprod.py
+    - python -c "import dprod"
+    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native
+    - python -c "import simple_numexpr"
   imports:
     - omp
     - pythran
