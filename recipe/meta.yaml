@@ -1,4 +1,4 @@
-{% set version = "0.9.3.post1" %}
+{% set version = "0.9.4.post0" %}
 
 package:
   name: pythran
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
-  sha256: 3744eca3e2284aee3137c8995025bde7ea76d5b78fad6d26e709a8c167c5a61d
+  sha256: d5d913c86cdc3a0c6387e796ec1f65c1563ca34f10201c43ae5acc757c70fd8d
 
 build:
   number: 0
@@ -31,11 +31,11 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
-    - gast =0.2.2
+    - gast >=0.3.0
     - networkx >=2
     - ply >=3.4
     - six
-    - beniget =0.1.0
+    - beniget >=0.2.0
     - xsimd =7.2.2
 
 test:
