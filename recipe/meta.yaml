@@ -40,7 +40,7 @@ requirements:
     - six
     - beniget >=0.2.0
     - xsimd =7.2.2  # [not win]
-    - colorlog
+    - colorlog  # [py3k]
 
 test:
   files:
