@@ -9,7 +9,7 @@ source:
   sha256: 815a778d6889593c0b8ddf08052cff36a504ce4cc8bd8d7bfb856a212f91486e
 
 build:
-  number: 0
+  number: 1
   script:
     - "python -c \"import os, shutil; shutil.rmtree(os.path.join('pythran', 'xsimd'))\""
     - "python -c \"with open('setup.cfg', 'w') as s: s.write('[build_py]\\nno_xsimd=True')\""  # [not win]
@@ -40,6 +40,7 @@ requirements:
     - six
     - beniget >=0.2.0
     - xsimd =7.2.2  # [not win]
+    - colorlog
 
 test:
   files:
