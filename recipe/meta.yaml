@@ -9,7 +9,7 @@ source:
   sha256: aaabc97f30ad46d1d62303323de6697d2933779afa4666c15b0f433cb50825b1
 
 build:
-  number: 0
+  number: 1
   script:
     - python -c "import os, shutil; shutil.rmtree(os.path.join('pythran', 'xsimd'))"
     - "python -c \"with open('setup.cfg', 'w') as s: s.write('[build_py]\\nno_xsimd=True')\""  # [not win]
