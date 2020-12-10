@@ -5,9 +5,13 @@ Home: http://github.com/serge-sans-paille/pythran
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pythran-feedstock/blob/master/LICENSE.txt)
 
 Summary: a claimless python to c++ converter
+
+Development: https://github.com/serge-sans-paille/pythran
+
+Documentation: https://pythran.readthedocs.io/
 
 Pythran is an ahead of time compiler for a subset of the Python language,
 with a focus on scientific computing. It takes a Python module annotated
