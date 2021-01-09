@@ -21,15 +21,17 @@ build:
 requirements:
   build:
     - {{ compiler('cxx') }}  # [not win]
-    - clang  # [win]
+    - clang                  # [win]
+    - clangxx                # [win]
   host:
     - python
     - pip
-    - numpy >=1.13
+    - numpy
     - pytest-runner
   run:
     - {{ compiler('cxx') }}  # [not win]
-    - clang  # [win]
+    - clang                  # [win]
+    - clangxx                # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
@@ -38,7 +40,7 @@ requirements:
     - ply >=3.4
     - six
     - beniget =0.3.0
-    - xsimd =7.2.2  # [not win]
+    - xsimd                  # [not win]
 
 test:
   files:
