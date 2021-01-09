@@ -35,11 +35,11 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
-    - gast ~=0.4.0
+    - gast 0.4
     - networkx >=2
     - ply >=3.4
     - six
-    - beniget ~=0.3.0
+    - beniget 0.3
     - xsimd                  # [not win]
 
 test:
