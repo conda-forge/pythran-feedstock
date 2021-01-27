@@ -5,9 +5,13 @@ Home: http://github.com/serge-sans-paille/pythran
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pythran-feedstock/blob/master/LICENSE.txt)
 
 Summary: a claimless python to c++ converter
+
+Development: https://github.com/serge-sans-paille/pythran
+
+Documentation: https://pythran.readthedocs.io/
 
 Pythran is an ahead of time compiler for a subset of the Python language,
 with a focus on scientific computing. It takes a Python module annotated
@@ -33,79 +37,124 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_python2.7</td>
+              <td>linux_64_python3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_python3.6</td>
+              <td>linux_64_python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_python3.7</td>
+              <td>linux_64_python3.7.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_python3.8</td>
+              <td>linux_64_python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python2.7</td>
+              <td>linux_64_python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=linux&configuration=linux_64_python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python3.6</td>
+              <td>osx_64_python3.6.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python3.7</td>
+              <td>osx_64_python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python3.8</td>
+              <td>osx_64_python3.7.____73_pypy</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
+              <td>osx_64_python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=osx&configuration=osx_64_python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+<<<<<<< HEAD
               <td>win_python2.7</td>
+||||||| f606fe5
+              <td>win_cxx_compilervs2015python3.6</td>
+=======
+              <td>win_64_python3.6.____cpython</td>
+>>>>>>> origin/master
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+<<<<<<< HEAD
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_python2.7" alt="variant">
+||||||| f606fe5
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.6" alt="variant">
+=======
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_64_python3.6.____cpython" alt="variant">
+>>>>>>> origin/master
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>win_python3.6</td>
+||||||| f606fe5
+              <td>win_cxx_compilervs2015python3.7</td>
+=======
+              <td>win_64_python3.7.____cpython</td>
+>>>>>>> origin/master
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+<<<<<<< HEAD
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_python3.6" alt="variant">
+||||||| f606fe5
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.7" alt="variant">
+=======
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_64_python3.7.____cpython" alt="variant">
+>>>>>>> origin/master
                 </a>
               </td>
             </tr><tr>
+<<<<<<< HEAD
               <td>win_python3.7</td>
+||||||| f606fe5
+              <td>win_cxx_compilervs2015python3.8</td>
+=======
+              <td>win_64_python3.8.____cpython</td>
+>>>>>>> origin/master
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
+<<<<<<< HEAD
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_python3.7" alt="variant">
                 </a>
               </td>
@@ -114,18 +163,17 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4830&branchName=master">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_python3.8" alt="variant">
+||||||| f606fe5
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_cxx_compilervs2015python3.8" alt="variant">
+=======
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pythran-feedstock?branchName=master&jobName=win&configuration=win_64_python3.8.____cpython" alt="variant">
+>>>>>>> origin/master
                 </a>
               </td>
             </tr>
           </tbody>
         </table>
       </details>
-    </td>
-  </tr>
-  <tr>
-    <td>Linux_ppc64le</td>
-    <td>
-      <img src="https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg" alt="ppc64le disabled">
     </td>
   </tr>
 </table>
