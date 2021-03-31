@@ -1,4 +1,4 @@
-{% set version = "0.9.8.post2" %}
+{% set version = "0.9.9" %}
 
 package:
   name: pythran
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
-  sha256: 013167eb8e61715b436572b899d84ac7584adb967c4d1d3a53807f89b46c20c8
+  sha256: aaabc97f30ad46d1d62303323de6697d2933779afa4666c15b0f433cb50825b1
 
 build:
   number: 0
