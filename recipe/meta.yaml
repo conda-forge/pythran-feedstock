@@ -54,8 +54,8 @@ test:
     - set "SRC_DIR="  # [win]
     - pythran -v dprod.py
     - python -c "import dprod"
-    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native  # [not (aarch64 or ppc64le)]
-    - pythran -v simple_numexpr.py -DUSE_XSIMD                # [aarch64 or ppc64le]
+    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native  # [not ppc64le]
+    - pythran -v simple_numexpr.py                            # [ppc64le]
     - python -c "import simple_numexpr"
   imports:
     - omp  # [not win]
