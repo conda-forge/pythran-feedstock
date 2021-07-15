@@ -9,7 +9,7 @@ source:
   sha256: e7589cf83b0befa9a1b55e98223caf89aff887d9e3f14be912cf8703a717f185
 
 build:
-  number: 0
+  number: 1
   script:
     # prevent d1trimfile option being added which clang-cl does not understand.
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
@@ -42,11 +42,9 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
-    - gast 0.4
-    - networkx >=2
+    - gast 0.5
     - ply >=3.4
-    - six
-    - beniget 0.3
+    - beniget 0.4
     - xsimd
 
 test:
