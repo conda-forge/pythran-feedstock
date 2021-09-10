@@ -35,7 +35,6 @@ requirements:
     - python
     - pip
     - numpy
-    - pytest-runner
   run:
     - {{ compiler('cxx') }}  # [not win]
     - clang                  # [win]
