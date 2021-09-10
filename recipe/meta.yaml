@@ -42,9 +42,9 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
-    - gast 0.5
+    - gast 0.5.*
     - ply >=3.4
-    - beniget 0.4
+    - beniget 0.4.*
     - xsimd
 
 test:
