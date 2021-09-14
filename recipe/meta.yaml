@@ -1,4 +1,4 @@
-{% set version = "0.9.12.post1" %}
+{% set version = "0.10.0" %}
 
 package:
   name: pythran
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
-  sha256: e7589cf83b0befa9a1b55e98223caf89aff887d9e3f14be912cf8703a717f185
+  sha256: 9dac8e1d50f33d4676003e350b1f0c878ce113e6f907920e92dc103352cac5bf
 
 build:
-  number: 1
+  number: 0
   script:
     # prevent d1trimfile option being added which clang-cl does not understand.
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
