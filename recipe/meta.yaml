@@ -9,7 +9,7 @@ source:
   sha256: c4853430e99dc382b8ed11e6eed3a196a571b2f311db4be4cf7b28d6f6866c54
 
 build:
-  number: 1
+  number: 2
   script:
     # prevent d1trimfile option being added which clang-cl does not understand.
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
