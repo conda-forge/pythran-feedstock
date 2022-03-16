@@ -43,6 +43,10 @@ requirements:
     - pip
     - numpy
   run:
+    # To ensure ABI compatibility, we install the same version of the C++
+    # compiler that was used when building. This is probably not necessary and
+    # could be replaced with something like
+    # {{ cxx_compiler }}_{{ target_platform }}
     - {{ compiler('cxx') }}  # [not win]
     - clang                  # [win]
     - clangxx                # [win]
