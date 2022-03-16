@@ -43,7 +43,7 @@ requirements:
     - pip
     - numpy
   run:
-    - gcc_{{ target_platform }} # [not win]
+    - gxx_{{ target_platform }} # [not win]
     - clang                     # [win]
     - clangxx                   # [win]
     - python
