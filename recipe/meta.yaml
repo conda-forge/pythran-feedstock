@@ -43,9 +43,12 @@ requirements:
     - pip
     - numpy
   run:
-    - {{ compiler('cxx') }}  # [not win]
-    - clang                  # [win]
-    - clangxx                # [win]
+    # We require a C++ compiler at runtime. We do not need exactly the one that
+    # was used when building pythran.
+    {% set compiler = compiler('cxx').split(' ')[0] %}
+    - {{ pin_compatible(compiler) }}  # [not win]
+    - clang                           # [win]
+    - clangxx                         # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
