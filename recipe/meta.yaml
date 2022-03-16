@@ -43,9 +43,9 @@ requirements:
     - pip
     - numpy
   run:
-    - gxx_{{ target_platform }} # [not win]
-    - clang                     # [win]
-    - clangxx                   # [win]
+    - gxx_{{ target_platform }}  # [not win]
+    - clang                      # [win]
+    - clangxx                    # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
