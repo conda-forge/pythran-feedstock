@@ -1,4 +1,4 @@
-{% set version = "0.12.0" %}
+{% set version = "0.12.1" %}
 
 package:
   name: pythran
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
-  sha256: a8f59dd0de0e50e4f8f18c901baf19270615c6c79cc987b9b2cfa740bf81edb4
+  sha256: 6aef4ca34eb4823c25aa52a8b8a6467a6b6f163bb52d9db8f1e20a2d62fc7e93
 
 build:
-  number: 1
+  number: 0
   script:
     # prevent d1trimfile option being added which clang-cl does not understand.
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
