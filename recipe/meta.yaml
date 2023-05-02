@@ -1,4 +1,4 @@
-{% set version = "0.12.1" %}
+{% set version = "0.13.0" %}
 
 package:
   name: pythran
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
-  sha256: 6aef4ca34eb4823c25aa52a8b8a6467a6b6f163bb52d9db8f1e20a2d62fc7e93
+  sha256: 317d985bb3b14917384d3783adf6d9c050962379870093e3ff4aa0561b852f54
 
 build:
   number: 0
