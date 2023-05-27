@@ -15,9 +15,6 @@ build:
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
     # https://github.com/conda-forge/python-feedstock/blob/e7ea437a819f8f06dcbc3769f6e46dc026070c44/recipe/patches/0021-Add-d1trimfile-SRC_DIR-to-make-pdbs-more-relocatable.patch
     - set "SRC_DIR="   # [win]
-    # unvendor xsimd; use version packaged by conda-forge
-    - python -c "import os, shutil; shutil.rmtree(os.path.join('third_party', 'xsimd'))"
-    - "python -c \"with open('setup.cfg', 'w') as s: s.write('[build_py]\\nno_xsimd=True')\""
     # on windows, pythran wrongly sets %PREFIX\include instead of %PREFIX%\Library\include;
     # pythran-win32.cfg already exists and has [compiler].include_dirs; we replace it on the fly;
     # conda will detect the written environment-path and replace it as appropriate for user installs;
@@ -56,7 +53,6 @@ requirements:
     - gast 0.5.*
     - ply >=3.4
     - beniget 0.4.*
-    - xsimd
 
 test:
   files:
