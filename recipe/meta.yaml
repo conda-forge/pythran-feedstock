@@ -53,6 +53,8 @@ requirements:
     - beniget 0.4.*
 
 test:
+  requires:
+    - setuptools  # [py>=312]
   files:
     - dprod.py
     - simple_numexpr.py
