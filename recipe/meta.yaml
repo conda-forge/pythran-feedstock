@@ -1,19 +1,27 @@
-{% set version = "0.9.8.post2" %}
+{% set version = "0.14.0" %}
 
 package:
   name: pythran
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/pythran/pythran-{{ version }}.tar.gz
-  sha256: 013167eb8e61715b436572b899d84ac7584adb967c4d1d3a53807f89b46c20c8
+  url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
+  sha256: c476c50bc7b27c06805c479720f807205e0000585d5e195e11f99cf6af9abf5b
 
 build:
   number: 1
   script:
-    - python -c "import os, shutil; shutil.rmtree(os.path.join('pythran', 'xsimd'))"
-    - "python -c \"with open('setup.cfg', 'w') as s: s.write('[build_py]\\nno_xsimd=True')\""  # [not win]
-    - python -c "s = open('pythran\pythran-win32.cfg', 'r'); c = s.read(); s.close(); s = open('pythran\pythran-win32.cfg', 'w'); r = c.replace('CC=', 'CC=clang-cl.exe').replace('CXX=','CXX=clang-cl.exe'); s.write(r); s.close(); print(r)"        # [win]
+    # prevent d1trimfile option being added which clang-cl does not understand.
+    # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
+    # https://github.com/conda-forge/python-feedstock/blob/e7ea437a819f8f06dcbc3769f6e46dc026070c44/recipe/patches/0021-Add-d1trimfile-SRC_DIR-to-make-pdbs-more-relocatable.patch
+    - set "SRC_DIR="   # [win]
+    # on windows, pythran wrongly sets %PREFIX\include instead of %PREFIX%\Library\include;
+    # pythran-win32.cfg already exists and has [compiler].include_dirs; we replace it on the fly;
+    # conda will detect the written environment-path and replace it as appropriate for user installs;
+    # note that we need r'...' for this due to paths like D:\bld\... where python would interpret \b.
+    - "python -c \"with open('pythran\\pythran-win32.cfg', 'r+') as s: a=s.read(); s.seek(0); s.write(a.replace('include_dirs=', r'include_dirs=%PREFIX%/Library/include'))\""  # [win]
+    # sanity check to ensure this is set correctly
+    - type pythran\pythran-win32.cfg  # [win]
     - python -m pip install . --no-deps -vv
   entry_points:
     - pythran = pythran.run:run
@@ -21,35 +29,43 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}  # [not win]
-    - clang  # [win]
+    - clang                  # [win]
+    - clangxx                # [win]
   host:
     - python
     - pip
-    - numpy >=1.13
-    - pytest-runner
+    - numpy
   run:
-    - {{ compiler('cxx') }}  # [not win]
-    - clang  # [win]
+    # To ensure ABI compatibility, we install the same C++
+    # compiler that was used for building.
+    - {{ cxx_compiler }}_{{ target_platform }}  # [unix]
+    - clang                  # [win]
+    - clangxx                # [win]
     - python
     - {{ pin_compatible('numpy') }}
     - decorator
-    - gast =0.4.0
-    - networkx >=2
+    - gast 0.5.*
     - ply >=3.4
-    - six
-    - beniget =0.3.0
-    - xsimd =7.2.2  # [not win]
-    - colorlog  # [py3k]
+    - colorlog
+    - beniget 0.4.*
 
 test:
+  requires:
+    - setuptools  # [py>=312]
   files:
     - dprod.py
     - simple_numexpr.py
   commands:
+    - set "SRC_DIR="  # [win]
     - pythran -v dprod.py
     - python -c "import dprod"
-    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native
+    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native  # [not (ppc64le or (osx and arm64))]
+    - pythran -v simple_numexpr.py -DUSE_XSIMD                # [osx and arm64]
+    - pythran -v simple_numexpr.py                            # [ppc64le]
     - python -c "import simple_numexpr"
   imports:
     - omp  # [not win]
@@ -78,3 +94,4 @@ extra:
   recipe-maintainers:
     - saraedum
     - serge-sans-paille
+    - h-vetinari
