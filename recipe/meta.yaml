@@ -5,10 +5,8 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
-  # sha256: 082b80649a014e75dbdcde2220be47f5446d649362cc8cf9b14f611117a01550
-  git_url: https://github.com/serge-sans-paille/pythran.git
-  git_rev: release/0.16.0
+  url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 56c42c745c4f253fb5053b3706345c6e111288f2f2df75e9dc265fff24e230de
 
 build:
   number: 0
