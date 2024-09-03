@@ -9,7 +9,7 @@ source:
   sha256: a2510f370a7d62761844daa112a455785e5a6a216cf9ae704c3926fe68eb65ce
 
 build:
-  number: 0
+  number: 1
   script:
     # prevent d1trimfile option being added which clang-cl does not understand.
     # d1trimfile option is added by a patch and disabled by unsetting SRC_DIR
@@ -39,6 +39,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
   run:
     # To ensure ABI compatibility, we install the same C++

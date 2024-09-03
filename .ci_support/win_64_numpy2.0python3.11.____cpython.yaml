@@ -1,7 +1,7 @@
 c_stdlib:
 - vs
 channel_sources:
-- conda-forge/label/numpy_rc,conda-forge
+- conda-forge
 channel_targets:
 - conda-forge main
 numpy:
@@ -17,3 +17,4 @@ target_platform:
 zip_keys:
 - - python
   - numpy
+  - channel_sources
