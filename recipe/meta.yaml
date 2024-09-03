@@ -39,6 +39,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
     - numpy
   run:
     # To ensure ABI compatibility, we install the same C++
