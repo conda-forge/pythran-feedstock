@@ -30,7 +30,6 @@ requirements:
     - python {{ python_min }}
     - pip
     - setuptools
-    - numpy
   run:
     - gxx                    # [linux]
     - clangxx                # [osx or win]
@@ -40,6 +39,7 @@ requirements:
     - ply >=3.4
     - colorlog
     - beniget 0.4.*
+    - numpy
     - __linux                # [linux]
     - __osx                  # [osx]
     - __win                  # [win]
