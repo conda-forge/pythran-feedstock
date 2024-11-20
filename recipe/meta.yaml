@@ -27,14 +27,14 @@ build:
 requirements:
   build:
   host:
-    - python  {{ python_min }}
+    - python {{ python_min }}
     - pip
     - setuptools
     - numpy
   run:
     - gxx                    # [linux]
     - clangxx                # [osx or win]
-    - python  >={{ python_min }}
+    - python >={{ python_min }}
     - decorator
     - gast 0.5.*
     - ply >=3.4
