@@ -46,7 +46,7 @@ requirements:
 
 test:
   requires:
-    - setuptools  # [py>=312]
+    - setuptools <=73.0.1
     - python {{ python_min }}
   files:
     - dprod.py
