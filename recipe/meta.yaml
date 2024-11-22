@@ -46,10 +46,8 @@ requirements:
 
 test:
   requires:
-    # fix an issue with numpy.distutils and python 3.9 setuptools
-    # See https://github.com/conda-forge/pythran-feedstock/pull/91#discussion_r1854543392
-    - setuptools <=73.0.1
     - python {{ python_min }}
+    - setuptools
   files:
     - dprod.py
     - simple_numexpr.py
