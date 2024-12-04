@@ -9,7 +9,7 @@ source:
   sha256: b1f13ca239625579a92bc915bd0abae3747d96063ce55790eead2a072667fcb3
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script:
     # on windows, pythran wrongly sets %PREFIX\include instead of %PREFIX%\Library\include;
