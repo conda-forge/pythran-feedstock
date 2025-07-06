@@ -47,7 +47,9 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
-    - setuptools
+    # hmaarrfk -- 2025/07/06
+    # Needed to find the compiler on windows for pythran 0.17.0
+    - setuptools <76
   files:
     - dprod.py
     - simple_numexpr.py
