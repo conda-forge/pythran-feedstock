@@ -9,7 +9,7 @@ source:
   sha256: b1f13ca239625579a92bc915bd0abae3747d96063ce55790eead2a072667fcb3
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script:
     # on windows, pythran wrongly sets %PREFIX\include instead of %PREFIX%\Library\include;
@@ -35,7 +35,7 @@ requirements:
     - clangxx                # [osx or win]
     - python >={{ python_min }}
     - decorator
-    - gast 0.5.*
+    - gast 0.6
     - ply >=3.4
     - colorlog
     - beniget 0.4.*
@@ -47,7 +47,9 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
-    - setuptools
+    # hmaarrfk -- 2025/07/06
+    # Needed to find the compiler on windows for pythran 0.17.0
+    - setuptools <76
   files:
     - dprod.py
     - simple_numexpr.py
