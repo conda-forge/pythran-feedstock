@@ -1,4 +1,4 @@
-{% set version = "0.17.0" %}
+{% set version = "0.18.0" %}
 
 package:
   name: pythran
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/serge-sans-paille/pythran/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b1f13ca239625579a92bc915bd0abae3747d96063ce55790eead2a072667fcb3
+  sha256: d3f879f86fde1c0eb62e02e52fbe30e2468fb59d8751b951b7cc6faf16e7df3e
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script:
     # on windows, pythran wrongly sets %PREFIX\include instead of %PREFIX%\Library\include;
