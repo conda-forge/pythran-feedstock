@@ -56,9 +56,7 @@ test:
   commands:
     - pythran -v dprod.py
     - python -c "import dprod"
-    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native  # [not (ppc64le or (osx and arm64))]
-    - pythran -v simple_numexpr.py -DUSE_XSIMD                # [osx and arm64]
-    - pythran -v simple_numexpr.py                            # [ppc64le]
+    - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native
     - python -c "import simple_numexpr"
   imports:
     - omp  # [not win]
