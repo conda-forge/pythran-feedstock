@@ -35,10 +35,10 @@ requirements:
     - clangxx                # [osx or win]
     - python >={{ python_min }}
     - decorator
-    - gast 0.6
+    - gast 0.7.*
     - ply >=3.4
     - colorlog
-    - beniget 0.4.*
+    - beniget 0.5.*
     - numpy
     - __linux                # [linux]
     - __osx                  # [osx]
@@ -47,6 +47,7 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
     # hmaarrfk -- 2025/07/06
     # Needed to find the compiler on windows for pythran 0.17.0
     - setuptools <76
@@ -58,6 +59,7 @@ test:
     - python -c "import dprod"
     - pythran -v simple_numexpr.py -DUSE_XSIMD -march=native
     - python -c "import simple_numexpr"
+    - pip check
   imports:
     - omp  # [not win]
     - pythran
